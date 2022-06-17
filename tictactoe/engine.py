@@ -1,9 +1,9 @@
 from tictactoe.board import Board
 
 class Engine:
-    def __init__(self, ai: str, player: str) -> None:
+    def __init__(self, ai: str, foe: str) -> None:
         self.ai = ai
-        self.player = player
+        self.foe = foe
 
     def minimax(self, board: Board, ai_turn: bool, last_move: int) -> tuple:
         available_moves = board.empty_squares()
@@ -25,7 +25,7 @@ class Engine:
             min_eval = 1000
             best_move = None
             for move in available_moves:
-                board.move(move, self.player)
+                board.move(move, self.foe)
                 eval_ = self.minimax(board, True, move)[0]
                 board.undo(move)
                 min_eval = min(min_eval, eval_)
@@ -36,7 +36,7 @@ class Engine:
     def evaluate_board(self, board: Board) -> int:
         if board.winner() == self.ai:
             return 1
-        elif board.winner() == self.player:
+        elif board.winner() == self.foe:
             return -1
         return 0
 
