@@ -27,7 +27,7 @@ The A.I. is designed to be unbeatable, meaning it will always either win or draw
 
 ## 📸 Screenshots
 
-![Demo](demo_gameplay.gif)
+<img src="./tictactoe_demo.gif" width="500">
 
 ## 💾 Installation
 
