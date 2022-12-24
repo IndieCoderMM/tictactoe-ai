@@ -9,6 +9,7 @@
   - [🛠 Technology](#-technology)
   - [📸 Screenshots](#-screenshots)
   - [💾 Installation](#-installation)
+  - [🎮 Tictactoe](#-tictactoe)
   - [🤝 Contributing](#-contributing)
   - [📜 License](#-license)
   - [💖 Show your support](#-show-your-support)
@@ -27,7 +28,7 @@ The A.I. is designed to be unbeatable, meaning it will always either win or draw
 
 ## 📸 Screenshots
 
-<img src="./tictactoe_demo.gif" width="500">
+<img src="./tictactoe_demo.gif" width="500" title="vs AI mode">
 
 ## 💾 Installation
 
@@ -48,6 +49,20 @@ pip install pygame
 ```sh
 python main.py
 ```
+
+## 🎮 Tictactoe
+
+**Tictactoe** game can also be played without engine.
+
+- Inside **tictactoe** package, there are 3 modules:
+  1. `board.py`: Game logics
+  2. `gui.py`: Pygame interface
+  3. `engine.py`: Algorithm
+- You can play the 2 player mode in the console, by running the `python tictactoe/board.py`.
+- You can also change the board size (4x4, 5x5, etc.). (_A.I. can only play 3x3 board currently_)
+- By changing `MODE` in `main.py`, you can play the 2P version in pygame interface.
+
+<img src="./tictactoe_2p_demo.gif" width="300" title="2 Player Mode">
 
 ## 🤝 Contributing
 

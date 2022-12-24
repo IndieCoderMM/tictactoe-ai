@@ -249,12 +249,13 @@ class Board:
     def print(self):
         """Represent the board in string
         """
+        turn = "Player 1" if self.turn == Symbol.CIRCLE else "Player 2"
         if self.winner():
             print("Match Over!")
             print("*" * 13)
         else:
             print("*" * 15)
-            print("Turn->> ", self.turn)
+            print("Turn->> ", turn)
             print('-' * (self.size * 5))
         for index, square in self.squares.items():
             r, c = index
@@ -287,4 +288,5 @@ if __name__ == "__main__":
     if board.is_draw():
         print("Draw! What a great match!")
     else:
-        print(board.winner(), " Wins....!")
+        print("Player 1" if board.winner() == Symbol.CIRCLE else "Player 2",
+              " Wins....!")

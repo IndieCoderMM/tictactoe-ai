@@ -26,11 +26,13 @@ YELLOW = (241, 196, 15)
 
 class Gui:
 
-    def __init__(self, board: Board, title: str) -> None:
+    def __init__(self, board: Board, title: str, mode) -> None:
         pygame.init()
         pygame.font.init()
         self.window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_WIDTH))
-        pygame.display.set_caption(title)
+        pygame.display.set_caption(
+            f'{title} ({"vs Terminator" if mode == "TERMINATOR" else "2 Player"})'
+        )
         self.board = board
         self._set_up()
 
