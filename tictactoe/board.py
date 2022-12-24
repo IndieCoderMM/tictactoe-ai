@@ -237,7 +237,6 @@ class Board:
     def move(self, square: Square):
         """Mark the square with symbol of current turn if valid and update the board
 
-
         Args:
             square (Square): square name
         """
@@ -259,8 +258,9 @@ class Board:
             print('-' * (self.size * 5))
         for index, square in self.squares.items():
             r, c = index
-            sign = square if self.is_empty(square) else self.square_value(
-                square)
+            sign = square if self.is_empty(
+                square) else "O" if self.square_value(
+                    square) == Symbol.CIRCLE else "X"
             print(' |', end=' ')
             print(sign, end='')
             if c == self.size - 1:
@@ -278,7 +278,8 @@ if __name__ == "__main__":
     board.print()
     running = True
     while running:
-        move = int(input(f"Enter {board.turn} 's move: "))
+        turn = "Player 1" if board.turn == Symbol.CIRCLE else "Player 2"
+        move = int(input(f"Enter {turn} 's move: "))
         board.move(move)
         board.print()
         if board.is_gameover():
