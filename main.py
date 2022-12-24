@@ -1,14 +1,15 @@
 import pygame
 import time
 
-from tictactoe.board import Board
+from tictactoe.board import Board, Symbol
 from tictactoe.gui import Gui
 from tictactoe.engine import Engine
 
+
 def main():
     board = Board()
-    human = board.P1
-    ai_player = board.P2 if human == board.P1 else board.P1
+    human = Symbol.CIRCLE
+    ai_player = Symbol.CROSS if human == Symbol.CIRCLE else Symbol.CIRCLE
 
     ai = Engine(ai_player, human, 9)
     gui = Gui(board, "Tic Tac Toe Pro")
